@@ -13,8 +13,7 @@ module Validators
 
   # Validate our withdrawl amount. Check:
   # positive integer
-  # less than or equal to current balance
-  def self.validate_withdrawl(input)
+  def self.validate_positive_int(input)
     num = input.to_i
     if num > 0
       return true
@@ -23,6 +22,7 @@ module Validators
     end
   end
 
+  # less than or equal to current balance
   def self.validate_amount_against_balance(withdrawl_amount, balance)
     if withdrawl_amount.to_i > balance.to_i
       return false
