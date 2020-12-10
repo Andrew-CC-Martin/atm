@@ -86,5 +86,14 @@ def make_deposit
   puts "Your new balance is $#{new_amount}"
 end
 
-atm_view = AtmView.new
-welcome_and_input(atm_view)
+if ARGV.length > 0
+  # handle command line arguments
+  if ARGV[0] == '-h' || ARGV[0] == '--help'
+    # print the help menu
+    puts "you asked for help"
+  end
+else
+  # run app
+  atm_view = AtmView.new
+  welcome_and_input(atm_view)
+end
