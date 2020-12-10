@@ -18,12 +18,12 @@ end
 
 describe 'validate withdrawl' do
   it 'is a positive integer' do
-    expect(Validators.validate_withdrawl("100")).to eq(true)
-    expect(Validators.validate_withdrawl("000812")).to eq(true)
+    expect(Validators.validate_positive_int("100")).to eq(true)
+    expect(Validators.validate_positive_int("000812")).to eq(true)
 
-    expect(Validators.validate_withdrawl("-100")).to eq(false)
-    expect(Validators.validate_withdrawl("hello")).to eq(false)
-    expect(Validators.validate_withdrawl("adshrj23423;alskd")).to eq(false)
+    expect(Validators.validate_positive_int("-100")).to eq(false)
+    expect(Validators.validate_positive_int("hello")).to eq(false)
+    expect(Validators.validate_positive_int("adshrj23423;alskd")).to eq(false)
   end
 
   it 'is <= the current bank balance' do
